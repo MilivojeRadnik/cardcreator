@@ -4,7 +4,9 @@ CardCreator je aplikacija napravljena da pomogne pri osmišljavanju i kreiranju 
 Aplikacija omogućava da svako u skladu sa svojom ulogom doprinosi kreiranju igre. Te uloge su _admin_, _editor_ i _creator_.
 
 **Admin** može da po svom nahođenju odobrava karte za izradu.
+
 **Editor** može da pregleda odobrene karte i da kartu nakon izrade u nekom grafičkom editoru označi kartu kao završenu.
+
 **Creator** (ali i _admin_ i _editor_) kreira karte, ima listing svojih i završenih karata.
 
 Svako može da edituje ili briše svoje karte.
