@@ -1,0 +1,17 @@
+extends layout 
+
+block content 
+  .forma
+    form(action='' method='post' enctype='multipart/form-data' )
+      fieldset(disabled) 
+        input#name(type='text' name='name' required='true' placeholder='Ime karte' value=card.name)
+        label(for='weight') Tezina:
+        input#weight(type='number' name='weight' required='true' min='0' max='5' value=card.weight)
+        .img 
+          if card.image_path == ''
+            p Nema slike
+          else
+            img#output(src=card.image_path)
+        textarea#description(rows='3' name='description' required='true') #{card.description}
+        input(type="hidden", name="id", value=card._id)
+  a(href="/list-done") Vidi karte

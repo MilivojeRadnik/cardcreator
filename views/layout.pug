@@ -1,0 +1,19 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  link(rel='stylesheet' href='./styles.css')
+  title #{title}
+
+body 
+
+  if errors
+    ul(class='error')
+      each error in errors  
+        li
+          p(class='error') #{error}
+  else if messages
+    ul(class='message')
+      each message in messages 
+        li #{message}
+
+  block content

@@ -1,0 +1,200 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  min-height: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.forma {
+  background-color: white;
+  border-radius: 7px;
+  border: 2px solid grey;
+  align-items: center;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  max-height: 90%;
+}
+
+.diskusija {
+  background-color: white;
+  border-radius: 7px;
+  border: 2px solid grey;
+  align-items: center;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  max-height: 90%;
+}
+
+.novajlije {
+  background-color: white;
+  border-radius: 7px;
+  border: 2px solid grey;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  max-height: 90%;
+}
+
+label,
+input {
+  display: block;
+  padding: 2px;
+}
+
+input[type='text'],
+input[type='password'] {
+  width: 200px;
+  margin: 5px;
+}
+
+textarea {
+  width: 200px;
+  margin: 5px 5px 0px 5px;
+  resize: none;
+  padding: 2px;
+}
+
+input[type='submit'],
+.btn {
+  width: 100px;
+  padding: 5px;
+  background-color: lightgrey;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  transition-duration: 0.2s;
+}
+
+input[type='submit']:hover,
+.btn:hover {
+  background-color: white;
+  transition-duration: 0.2s;
+}
+
+label[for='weight'] {
+  float: left;
+}
+
+input[type='number'] {
+  margin-left: auto;
+  margin-right: 5px;
+}
+
+.img {
+  height: 200px;
+  width: 205px;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+
+img[id='output'] {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.error {
+  color: red;
+  margin: 5px;
+}
+
+.message {
+  color: #00ff00;
+  margin: 5px;
+}
+
+table,
+td {
+  border: 1px solid;
+  text-align: center;
+}
+
+td a {
+  display: block;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+}
+
+a {
+  padding: 5px;
+}
+
+p {
+  margin: 5px;
+}
+
+.discussion-select-box {
+  border: 1px solid grey;
+  padding: 5px;
+  margin: 2px;
+  display: table-row;
+  width: 98%;
+}
+
+input[id='comment-btn'] {
+  width: 20px;
+  height: 25px;
+  padding: 5px;
+  background-color: lightgrey;
+  cursor: pointer;
+  border: 1px solid black;
+  margin: 5px 0px 0px 0px;
+  border-radius: 0%;
+  transition-duration: 0.2s;
+}
+
+.comments {
+  width: 400px;
+  border: 1px solid black;
+  border-top: none;
+  font-weight: normal;
+  margin-bottom: 5px;
+}
+
+.normala {
+  padding: 0px;
+  font-size: 13px;
+  float: right;
+  border: none;
+  background: none;
+  color: blue;
+}
+
+.normala:hover {
+  cursor: pointer;
+}
+
+.reply {
+  padding-left: 5px;
+  margin-left: 7px;
+  border-left: 1px solid grey;
+}
+
+.wnp {
+  max-width: 400px;
+  text-align: left;
+}
+
+.novo {
+  font-size: 18;
+  color: red;
+}

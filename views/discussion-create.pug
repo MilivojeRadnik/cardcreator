@@ -1,0 +1,11 @@
+extends layout 
+
+block content
+  div(class='forma')
+    form(action='' method='post')
+      label(for="name") Ime diskusije:
+      input#name(type="text", name="name")
+      label(for="content") Predmet diskusije: 
+      textarea#content(name="content", cols="30", rows="10") 
+      input(type="submit", value="OBJAVI")
+  a(href="discussions") Diskusije

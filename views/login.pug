@@ -1,0 +1,12 @@
+extends layout 
+
+block content
+  div(class='forma')
+    form() 
+      label(for='user') User:
+      input#user(type='text' name='user' required='true')
+      label(for='password') Password:
+      input#password(type='password' name='password' required='true')
+      input#login(type='submit' value='LOGIN')
+  a(href="/updatelog") Sta je novo :)
+  script(src="/login.js") 

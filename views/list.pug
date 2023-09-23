@@ -1,0 +1,18 @@
+extends layout 
+
+block content 
+  if cards 
+    table  
+      th Ime 
+      th Status
+      each card in cards 
+        tr 
+          td 
+            a(href="/card?id="+card.id) #{card.name}
+          td
+            P #{card.status}
+          td 
+            a(href=`/delete?id=`+card.id) Obrisi
+  else 
+    p Nemas svojih kartica
+  a(href="/list-select") Izbor

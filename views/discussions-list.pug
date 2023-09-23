@@ -1,0 +1,15 @@
+extends layout 
+
+block content
+  div(class='forma')
+    a(href="create-discussion") Zapocni diskusiju
+    if discussions 
+      each discussion in discussions
+        div(class="discussion-select-box")
+          a(href="discussion?id="+discussion._id, style="float:left") 
+            h4 #{discussion.name} 
+          p(style="float: right") by: #{discussion.creator.user}
+    else 
+      p Nema aktivnih diskusija
+      
+  a(href="list-select") Izbor

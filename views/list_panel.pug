@@ -1,0 +1,33 @@
+extends layout 
+
+block content 
+  if cards 
+    table  
+      th Kreator 
+      th Ime 
+      th Status
+      each card in cards 
+        if user.role == 'admin'
+          tr 
+            td 
+              p #{card.creator}
+            td 
+              p #{card.name}
+            td 
+              p #{card.status}
+            td 
+              a(href=`/edit?id=`+card.id) Uredi
+        else 
+          if card.status != 'submitted'
+            tr 
+              td 
+                p #{card.creator}
+              td 
+                p #{card.name}
+              td 
+                p #{card.status}
+              td 
+                a(href=`/edit?id=`+card.id) Uredi
+  else 
+    p Ne postoji ni jedna karta
+  a(href="/list-select") Izbor

@@ -1,0 +1,18 @@
+extends layout 
+
+block content 
+  if cards 
+    table  
+      th Kreator 
+      th Ime
+      each card in cards 
+        tr 
+          td 
+            p #{card.creator.user}
+          td
+            P #{card.name}
+          td 
+            a(href=`/viewcard?id=`+card.id) Vidi
+  else 
+    p Nema gotovih kartica
+  a(href="/list-select") Izbor

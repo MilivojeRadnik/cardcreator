@@ -1,0 +1,39 @@
+extends layout 
+
+block content
+  div(class='diskusija')
+    h2 #{discussion.name}
+    div(style="border: 1px solid grey; max-width: 340px")
+      p(style="width 300px") #{discussion.content}
+    form(action="", method="post" id='forma') 
+      label(for="content") Komentarisi 
+      input#content(type="text", name="content", style="float:left; width: 300px")
+      input#discussion(type="hidden", name="discussion", value=discussion._id)
+      input#comment-btn(type="submit", value=">", style="float: right")
+    h4 Komentari:
+    if comments 
+      each comment in comments  
+        div(class="comments", id=comment._id)
+          p(style="font-size: 13px;") #{comment.creator.user} 
+          button(id=comment.id+'btn', class="normala", onclick="reply('"+comment._id+"', '"+discussion._id+"')")
+            p ←-Reply
+          p #{comment.content}
+          if comment.replies != undefined 
+            div(class="reply")
+              each reply in comment.replies
+                p(id=reply.id+'head', style="font-size: 13px; border-top: 1px solid grey; width: 20px") #{reply.creator.user}
+                p(id=reply.id) #{reply.content} 
+  a(href="/discussions") Diskusije 
+
+  script.
+    function reply(commentId, discussionId){
+      var htmlBody = "<form method='post'>"
+      htmlBody+="<input id=content type='text' name='content' style='float:left; width: 200px'/>"
+      htmlBody+="<input type='hidden' name='replyTo' id='replyTo' value='"+commentId+"'/>"
+      htmlBody+="<input type='hidden' name='discussion' id='discussion' value='"+discussionId+"'/>"
+      htmlBody+="<input id=comment-btn type='submit', value='>', style='float: right; margin-right:40%'/>"
+      htmlBody+="</form>"
+      document.getElementById(commentId).innerHTML += htmlBody;
+      document.getElementById(commentId+'btn').innerHTML = ''
+      document.getElementById('forma').innerHTML = ''
+    }

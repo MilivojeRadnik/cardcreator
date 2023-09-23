@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  .forma
+    a(href='/list')
+      button.btn(type='button') Moje karte
+    if user.role != 'creator'
+      a(href='/list-panel')
+        button.btn(type='button') Karte za izradu
+    a(href="/list-done") 
+      button.btn(type='button') Gotove karte
+    a(href="/discussions") 
+      button.btn(type='button') Diskusije
+    
+  a(href="/") Napravi kartu

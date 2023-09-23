@@ -1,0 +1,26 @@
+extends layout 
+
+block content 
+  .forma
+    form(action='' method='post')
+      input#name(type='text' name='name' required='true' placeholder='Ime karte' value=card.name)
+      label(for='weight') Tezina:
+      input#weight(type='number' name='weight' required='true' min='0' max='5' value=card.weight)
+      .img
+        input#image(type='file' accept='image/jpeg' name='image' onchange='loadFile(event)' style='display: none;')
+        label#preview(for='image' style='cursor: pointer;') 
+          if card.image_path == ''
+            p IZABERI SLIKU
+          else
+            img#output(src=card.image_path)
+      textarea#description(rows='3' name='description' required='true') #{card.description}
+      input(type="hidden", name="id", value=card._id)
+      input(type="hidden", name="image_path")
+      input(type='submit' value='Promijeni')
+  a(href='/list' style='margin: 10px;') Izlistaj karte
+  script.
+    var loadFile = function(event) {
+    var image = document.getElementById('output');
+    var preview = document.getElementById('preview');
+    preview.innerHTML = `<img id='output' src='${URL.createObjectURL(event.target.files[0])}' />`
+    };
