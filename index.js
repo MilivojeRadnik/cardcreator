@@ -22,8 +22,7 @@ const upload = multer({
 //mongoDB setup
 const mongoose = require('mongoose');
 const uri =
-  process.env.MONGODB_URI ||
-  'mongodb+srv://korisnik:qwerty123@cluster0.cuabd.mongodb.net/akatron?retryWrites=true&w=majority';
+  process.env.MONGODB_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
